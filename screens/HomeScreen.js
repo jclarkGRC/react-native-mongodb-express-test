@@ -40,9 +40,9 @@ export default class HomeScreen extends React.Component {
             <View style={{backgroundColor: "black",height: "50%", textAlign: "center"}}>
               <Text style={{fontSize: 22, color: "white", marginTop: 30, textAlign: "center"}}>Your name has this many letters:</Text>
                 <Text id={"age"} style={{fontSize: 22, color: "white", marginTop: 30, textAlign: "center"}}>0</Text>
-                <View style={{marginTop: 40}}>
+                <View style={{marginTop: 40, width: "50%", marginLeft: "25%"}}>
                 <Button
-                    title="Save your age"
+                    title="Save your name"
                     color="#841584"
                     accessibilityLabel="Learn more about this purple button"
                 />
