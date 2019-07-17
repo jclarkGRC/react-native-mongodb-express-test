@@ -2,6 +2,7 @@ import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
 import {
   Image,
+  Button,
   Platform,
   ScrollView,
   StyleSheet,
@@ -23,11 +24,29 @@ export default class HomeScreen extends React.Component {
       return (
           <View>
             <View style={{backgroundColor: "green",height: "50%"}}>
-                <Text style={{fontSize: 22, color: "white", marginTop: 30, textAlign: "center"}}>Tell me what is your name?</Text>
-
-            </View>
-            <View style={{backgroundColor: "black",height: "50%"}}>
-              <Text style={{fontSize: 22, color: "white", marginTop: 30, textAlign: "center"}}>How many letters in your name:?</Text>
+                <Text style={{fontSize: 22, color: "white", marginTop: 40, textAlign: "center"}}>Tell me what is your name?</Text>
+                <TextInput
+                    placeholder="Please enter your name here"
+                    underlineColorAndroid='transparent'
+                    style={styles.TextInputStyle}
+                />
+                <Text style={{fontSize: 22, color: "white", marginTop: 40, textAlign: "center"}}>How old are you?</Text>
+                <TextInput
+                    placeholder="Please enter your age here"
+                    underlineColorAndroid='transparent'
+                    style={styles.TextInputStyle}
+                />
+          </View>
+            <View style={{backgroundColor: "black",height: "50%", textAlign: "center"}}>
+              <Text style={{fontSize: 22, color: "white", marginTop: 30, textAlign: "center"}}>Your name has this many letters:</Text>
+                <Text id={"age"} style={{fontSize: 22, color: "white", marginTop: 30, textAlign: "center"}}>0</Text>
+                <View style={{marginTop: 40}}>
+                <Button
+                    title="Save your age"
+                    color="#841584"
+                    accessibilityLabel="Learn more about this purple button"
+                />
+                </View>
             </View>
           </View>
       );
@@ -74,8 +93,19 @@ function handleHelpPress() {
 }
 
 const styles = StyleSheet.create({
-  inputBorder: {
-      borderColor: "black"
+  TextInputStyle: {
+      textAlign: 'center',
+      height: 40,
+      borderRadius: 10,
+      borderWidth: 2,
+      borderColor: '#009688',
+      marginTop: 20,
+      marginBottom: 10,
+      position: "relative",
+      marginLeft: "25%",
+      width: "50%",
+      backgroundColor: "white",
+      color: "black"
   },
   container: {
     flex: 1,
