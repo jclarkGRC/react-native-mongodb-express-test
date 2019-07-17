@@ -16,11 +16,22 @@ import { MonoText } from '../components/StyledText';
 
 export default class HomeScreen extends React.Component {
 
+  constructor(props){
+    super(props);
+
+  }
+
   state = {
+    nameCount: 0
 
   };
 
+  listenToAgeChanging = (event) => {
+    this.setState({nameCount: (event.nativeEvent.text).length})
+  };
+
   render(){
+
       return (
           <View>
             <View style={{backgroundColor: "green",height: "50%"}}>
@@ -29,6 +40,7 @@ export default class HomeScreen extends React.Component {
                     placeholder="Please enter your name here"
                     underlineColorAndroid='transparent'
                     style={styles.TextInputStyle}
+                    onChange={this.listenToAgeChanging}
                 />
                 <Text style={{fontSize: 22, color: "white", marginTop: 40, textAlign: "center"}}>How old are you?</Text>
                 <TextInput
@@ -39,7 +51,7 @@ export default class HomeScreen extends React.Component {
           </View>
             <View style={{backgroundColor: "black",height: "50%", textAlign: "center"}}>
               <Text style={{fontSize: 22, color: "white", marginTop: 30, textAlign: "center"}}>Your name has this many letters:</Text>
-                <Text id={"age"} style={{fontSize: 22, color: "white", marginTop: 30, textAlign: "center"}}>0</Text>
+                <Text id={"age"} style={{fontSize: 22, color: "white", marginTop: 30, textAlign: "center"}}>{this.state.nameCount}</Text>
                 <View style={{marginTop: 40, width: "50%", marginLeft: "25%"}}>
                 <Button
                     title="Save your name"
